@@ -39,6 +39,25 @@
                 </ul>
             </li>
 
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="#">
+                    All Cars
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('admin.car-categories.index') }}">
+                    Add Category
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('admin.car-brands.index') }}">
+                    Add Brand
+                </a>
+            </li>
+
         </ul>
     </div>
 </nav>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\BookingController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +18,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
+Route::middleware(['auth', 'role:user'])->group(function () {
+    Route::post('/cars/{car}/book', [BookingController::class, 'store'])
+        ->name('booking.store');
+});
+
+
 require __DIR__.'/auth.php';
+require __DIR__.'/admin.php';
+require __DIR__.'/owner.php';
